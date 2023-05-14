@@ -1,0 +1,165 @@
+@use "../../colors" as *;
+
+.menu {
+	background-color: $black;
+	.shape {
+		display: none;
+	}
+	.menu-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 3em;
+		.menu-box {
+			margin-bottom: 3em;
+
+			.menu-l {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+
+				.menu-img {
+					width: 30%;
+					border: 2px solid $gold;
+					overflow: hidden;
+				}
+			}
+			.menu-r {
+				padding: 0 1em;
+				text-align: center;
+				.menu-title {
+					padding: 0.5em 0;
+					font-size: 2.2rem;
+					font-weight: 400;
+					text-transform: uppercase;
+					color: $gold;
+				}
+
+				.menu-item {
+					padding: 0.5em 0;
+					font-size: 1.5rem;
+					font-weight: 200;
+					color: white;
+
+					.menu-line {
+						font-size: 0.5rem;
+						color: $gold;
+					}
+				}
+
+				.menu-description {
+					display: block;
+					margin: 0 auto;
+					text-align: center;
+					width: 75%;
+					font-size: 1rem;
+					font-weight: 200;
+					color: rgb(169, 169, 169);
+				}
+			}
+		}
+	}
+}
+@media (min-width: 768px) {
+	.menu {
+		.menu-container {
+			.menu-box {
+				.menu-r {
+					.menu-title {
+						font-size: 3.2rem;
+					}
+
+					.menu-item {
+						font-size: 3rem;
+					}
+
+					.menu-description {
+						font-size: 1.5rem;
+						width: 60%;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 1024px) {
+	.menu {
+		.menu-container {
+			.menu-box {
+				.menu-r {
+					.menu-title {
+						font-size: 3.6rem;
+					}
+
+					.menu-item {
+						font-size: 3.4rem;
+					}
+
+					.menu-description {
+						font-size: 2rem;
+						width: 50%;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 1200px) {
+	.menu {
+		position: relative;
+		.shape {
+			display: block;
+			position: absolute;
+		}
+		.shape-1 {
+			top: 500em;
+			left: 0;
+			width: 400px;
+			height: 400px;
+		}
+		.shape-2 {
+			top: 90em;
+			left: 30em;
+			width: 400px;
+			height: 600px;
+		}
+		.shape-3 {
+			top: 230em;
+			right: 30em;
+			height: 500px;
+			width: 300px;
+			rotate: 30deg;
+		}
+		.shape-4 {
+			bottom: 5em;
+			right: 5em;
+			width: 500px;
+			height: 700px;
+			rotate: 180deg;
+		}
+		.shape-5 {
+			top: 5em;
+			right: 5em;
+			width: 400px;
+			height: 400px;
+		}
+		.menu-container {
+			padding-bottom: 10em;
+			.menu-box {
+				.menu-l {
+					justify-content: center;
+					gap: 1em;
+					.menu-img {
+						width: 20%;
+					}
+				}
+				.menu-r {
+					.menu-description {
+						width: 30%;
+					}
+				}
+			}
+		}
+	}
+}

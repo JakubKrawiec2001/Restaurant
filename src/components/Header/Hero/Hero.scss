@@ -1,0 +1,465 @@
+@use "../../../colors" as *;
+
+main {
+	background-image: url("../../../assets/images/bg.png");
+
+	height: 90vh;
+}
+a {
+	text-decoration: none;
+}
+
+.hero-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.fade {
+		position: absolute;
+		left: 30em;
+		width: 23%;
+		height: 23%;
+		border-radius: 100%;
+		background-color: $gold;
+		filter: blur(200px);
+		z-index: 0;
+	}
+
+	.hero-left {
+		width: 60%;
+		z-index: 1;
+		.little-text {
+			font-size: 1.4rem;
+			color: $gold;
+		}
+		.line {
+			display: flex;
+			align-items: center;
+			position: relative;
+			height: 5px;
+			width: 50px;
+			margin: 1em 0;
+			border-radius: 25px;
+			background-color: $gold;
+		}
+		.line::after {
+			content: "";
+			position: absolute;
+			right: -1.5em;
+			height: 10px;
+			width: 10px;
+			border-radius: 100%;
+			background-color: $gold;
+		}
+
+		h1 {
+			font-weight: 400;
+			font-size: 7rem;
+			color: white;
+		}
+		.description {
+			width: 70%;
+			padding: 1em 0 1.5em 0;
+			font-weight: 200;
+			font-size: 2rem;
+			color: white;
+		}
+		.btn-hero {
+			display: flex;
+			align-items: center;
+			gap: 1em;
+			font-size: 1.6rem;
+		}
+	}
+	.hero-right {
+		position: relative;
+		width: 500px;
+
+		img {
+			width: 100%;
+			height: 700px;
+		}
+	}
+	.hero-right::before {
+		content: "";
+		position: absolute;
+		top: -3em;
+		left: -3em;
+		border-top: 8px solid $gold;
+		border-left: 8px solid $gold;
+		width: 50%;
+		height: 50%;
+	}
+	.hero-right::after {
+		content: "";
+		position: absolute;
+		bottom: -3em;
+		right: -3em;
+		border-bottom: 8px solid $gold;
+		border-right: 8px solid $gold;
+		width: 50%;
+		height: 50%;
+	}
+}
+
+@media (min-width: 320px) {
+	.hero-section {
+		flex-direction: column;
+
+		.fade {
+			left: 5em;
+			width: 50%;
+			height: 50%;
+		}
+		.hero-left {
+			text-align: center;
+
+			.line {
+				left: 35%;
+			}
+			h1 {
+				font-size: 2rem;
+			}
+			.description {
+				width: 100%;
+				font-size: 1.2rem;
+			}
+			.btn-hero {
+				display: none;
+			}
+		}
+		.hero-right {
+			margin-top: 2em;
+			width: 150px;
+			img {
+				height: 200px;
+			}
+		}
+		.hero-right::before {
+			top: -1em;
+			left: -1em;
+			border-top: 4px solid $gold;
+			border-left: 4px solid $gold;
+		}
+		.hero-right::after {
+			bottom: -1em;
+			right: -1em;
+			border-bottom: 4px solid $gold;
+			border-right: 4px solid $gold;
+		}
+	}
+}
+
+@media (min-width: 375px) {
+	.hero-section {
+		flex-direction: column;
+
+		.fade {
+			left: 5em;
+			width: 50%;
+			height: 50%;
+		}
+		.hero-left {
+			text-align: center;
+
+			.line {
+				left: 35%;
+			}
+			h1 {
+				font-size: 2rem;
+			}
+			.description {
+				width: 100%;
+				font-size: 1.2rem;
+			}
+			.btn-hero {
+				display: flex;
+				margin: 0 auto;
+				font-size: 1rem;
+			}
+		}
+		.hero-right {
+			margin-top: 3em;
+			width: 200px;
+			img {
+				height: 300px;
+			}
+		}
+		.hero-right::before {
+			top: -1em;
+			left: -1em;
+			border-top: 4px solid $gold;
+			border-left: 4px solid $gold;
+		}
+		.hero-right::after {
+			bottom: -1em;
+			right: -1em;
+			border-bottom: 4px solid $gold;
+			border-right: 4px solid $gold;
+		}
+	}
+}
+
+@media (min-width: 414px) {
+	.hero-section {
+		flex-direction: column;
+
+		.fade {
+			left: 5em;
+			width: 50%;
+			height: 50%;
+		}
+		.hero-left {
+			text-align: center;
+
+			.line {
+				left: 35%;
+			}
+			h1 {
+				font-size: 2.5rem;
+			}
+			.description {
+				width: 100%;
+				font-size: 1.2rem;
+			}
+			.btn-hero {
+				display: flex;
+				margin: 1em auto;
+				font-size: 1rem;
+			}
+		}
+		.hero-right {
+			margin-top: 2em;
+			width: 220px;
+			img {
+				height: 330px;
+			}
+		}
+		.hero-right::before {
+			top: -1em;
+			left: -1em;
+			border-top: 4px solid $gold;
+			border-left: 4px solid $gold;
+		}
+		.hero-right::after {
+			bottom: -1em;
+			right: -1em;
+			border-bottom: 4px solid $gold;
+			border-right: 4px solid $gold;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.hero-section {
+		flex-direction: column;
+
+		.fade {
+			left: 5em;
+			width: 50%;
+			height: 50%;
+		}
+		.hero-left {
+			text-align: center;
+
+			.line {
+				left: 35%;
+			}
+			h1 {
+				font-size: 4rem;
+			}
+			.description {
+				width: 100%;
+				font-size: 2rem;
+			}
+			.btn-hero {
+				display: flex;
+				margin: 1em auto;
+				font-size: 1.8rem;
+			}
+		}
+		.hero-right {
+			margin-top: 4em;
+			width: 300px;
+			img {
+				height: 450px;
+			}
+		}
+		.hero-right::before {
+			top: -1em;
+			left: -1em;
+			border-top: 4px solid $gold;
+			border-left: 4px solid $gold;
+		}
+		.hero-right::after {
+			bottom: -1em;
+			right: -1em;
+			border-bottom: 4px solid $gold;
+			border-right: 4px solid $gold;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.hero-section {
+		flex-direction: column;
+
+		.fade {
+			left: 5em;
+			width: 50%;
+			height: 50%;
+		}
+		.hero-left {
+			text-align: center;
+
+			.line {
+				left: 45%;
+			}
+			h1 {
+				font-size: 4rem;
+			}
+			.description {
+				width: 100%;
+				font-size: 2rem;
+			}
+			.btn-hero {
+				display: flex;
+				margin: 1em auto;
+				font-size: 2rem;
+			}
+		}
+		.hero-right {
+			margin-top: 2em;
+			width: 500px;
+			img {
+				height: 750px;
+			}
+		}
+		.hero-right::before {
+			top: -1em;
+			left: -1em;
+			border-top: 4px solid $gold;
+			border-left: 4px solid $gold;
+		}
+		.hero-right::after {
+			bottom: -1em;
+			right: -1em;
+			border-bottom: 4px solid $gold;
+			border-right: 4px solid $gold;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.hero-section {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+
+		.fade {
+			position: absolute;
+			left: 30em;
+			width: 23%;
+			height: 23%;
+			border-radius: 100%;
+			background-color: $gold;
+			filter: blur(200px);
+			z-index: 0;
+		}
+
+		.hero-left {
+			width: 60%;
+			text-align: left;
+			z-index: 1;
+			.little-text {
+				font-size: 1.4rem;
+				color: $gold;
+			}
+			.line {
+				display: flex;
+				align-items: center;
+				position: relative;
+				left: 0;
+				height: 5px;
+				width: 50px;
+				margin: 1em 0;
+				border-radius: 25px;
+				background-color: $gold;
+			}
+			.line::after {
+				content: "";
+				position: absolute;
+				right: -1.5em;
+				height: 10px;
+				width: 10px;
+				border-radius: 100%;
+				background-color: $gold;
+			}
+
+			h1 {
+				font-weight: 400;
+				font-size: 7rem;
+				color: white;
+			}
+			.description {
+				width: 70%;
+				padding: 1em 0 1.5em 0;
+				font-weight: 200;
+				font-size: 2rem;
+				color: white;
+			}
+			.btn-hero {
+				display: flex;
+				align-items: center;
+				gap: 1em;
+				margin: 0;
+				font-size: 1.6rem;
+			}
+		}
+		.hero-right {
+			position: relative;
+			width: 500px;
+			margin: 0;
+			img {
+				width: 100%;
+				height: 700px;
+			}
+		}
+		.hero-right::before {
+			content: "";
+			position: absolute;
+			top: -3em;
+			left: -3em;
+			border-top: 8px solid $gold;
+			border-left: 8px solid $gold;
+			width: 50%;
+			height: 50%;
+		}
+		.hero-right::after {
+			content: "";
+			position: absolute;
+			bottom: -3em;
+			right: -3em;
+			border-bottom: 8px solid $gold;
+			border-right: 8px solid $gold;
+			width: 50%;
+			height: 50%;
+		}
+	}
+}
+
+@media (min-width: 2000px) {
+	main {
+		height: 100vh;
+	}
+	.hero-section {
+		.hero-right {
+			width: 600px;
+			img {
+				height: 900px;
+			}
+		}
+	}
+}

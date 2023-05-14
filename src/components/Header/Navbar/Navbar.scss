@@ -1,0 +1,342 @@
+@use "../../../colors" as *;
+
+.sticky {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	padding-bottom: 1em;
+	transition: all 0.3s;
+	background-color: $black;
+	z-index: 100;
+}
+.nav {
+	background-image: url("../../../assets/images/bg.png");
+}
+
+.nav-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+
+	.restaurant-name {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+
+		.logo {
+			font-size: 4rem;
+			path {
+				stroke: $gold;
+			}
+		}
+		.name {
+			font-family: "Dancing Script", cursive;
+			font-size: 4rem;
+			color: $gold;
+		}
+	}
+	.nav-links {
+		display: flex;
+		gap: 2em;
+		list-style: none;
+
+		a {
+			position: relative;
+			font-size: 1.8rem;
+			color: white;
+			text-decoration: none;
+			font-weight: 200;
+			transition: all 0.3s;
+		}
+		a:hover {
+			color: $gold;
+		}
+		a::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			margin: auto;
+			width: 0%;
+			height: 1px;
+			background-color: $gold;
+		}
+		a:hover::after {
+			animation: navHover 0.3s forwards;
+		}
+	}
+	.btn-burger {
+		display: none;
+	}
+
+	.burger-nav-links {
+		display: none;
+		.btn-burger-book {
+			display: none;
+		}
+	}
+
+	.btn-book {
+		display: none;
+	}
+}
+
+@keyframes navHover {
+	from {
+		width: 0%;
+	}
+
+	to {
+		width: 100%;
+	}
+}
+
+@media (min-width: 320px) {
+	.nav-bar {
+		padding-top: 1em;
+
+		.nav-links {
+			display: none;
+		}
+		.btn-burger {
+			display: block;
+			margin-top: 0.5em;
+			background: none;
+			border: transparent;
+			color: white;
+			font-size: 3rem;
+			cursor: pointer;
+		}
+
+		.burger-nav-links {
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 3em;
+			background-image: url("../../../assets/images/bg.png");
+			border: 2px solid $black;
+			border-radius: 10px;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+			transition: all 0.3s ease-in;
+			z-index: 99;
+			.btn-close {
+				position: absolute;
+				top: 0.5em;
+				right: 0.5em;
+				padding: 0.5em;
+				font-size: 3rem;
+				background: none;
+				border: transparent;
+				color: $gold;
+				cursor: pointer;
+			}
+
+			li {
+				list-style: none;
+				a {
+					font-size: 2.5rem;
+					text-decoration: none;
+					align-items: center;
+					color: $gold;
+				}
+			}
+			.btn-burger-book {
+				display: block;
+				margin-top: 1em;
+				padding: 1em 2em;
+				border: transparent;
+				background-color: $gold;
+				color: $black;
+				border-radius: 10px;
+				font-size: 1.6rem;
+			}
+		}
+		.active {
+			left: 0;
+		}
+
+		.btn-book {
+			display: none;
+		}
+	}
+}
+
+@media (min-width: 414px) {
+	.nav-bar {
+		padding-top: 1em;
+
+		.nav-links {
+			display: none;
+		}
+		.btn-burger {
+			display: block;
+
+			background: none;
+			border: transparent;
+			color: white;
+			font-size: 4rem;
+		}
+
+		.burger-nav-links {
+			.btn-close {
+				font-size: 4rem;
+			}
+			li {
+				a {
+					font-size: 3rem;
+				}
+			}
+			.btn-burger-book {
+				font-size: 2rem;
+			}
+		}
+		.active {
+			right: 5em;
+		}
+
+		.btn-book {
+			display: none;
+		}
+	}
+}
+@media (min-width: 768px) {
+	.nav-bar {
+		padding-top: 1em;
+
+		.nav-links {
+			display: none;
+		}
+		.btn-burger {
+			display: block;
+			margin-top: 0.5em;
+			margin-right: 0.5em;
+			background: none;
+			border: transparent;
+			color: white;
+			font-size: 4rem;
+		}
+
+		.burger-nav-links {
+			.btn-close {
+				font-size: 7rem;
+			}
+			li {
+				a {
+					font-size: 5rem;
+				}
+			}
+			.btn-burger-book {
+				font-size: 2.6rem;
+			}
+		}
+		.active {
+			right: 5em;
+		}
+
+		.btn-book {
+			display: none;
+		}
+	}
+}
+@media (min-width: 992px) {
+	.nav-bar {
+		padding: 3em;
+
+		.nav-links {
+			display: flex;
+		}
+		.btn-burger {
+			display: none;
+		}
+
+		.burger-nav-links {
+			display: none;
+		}
+
+		.btn-book {
+			display: block;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.nav-bar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1em;
+		padding-top: 3em;
+
+		.restaurant-name {
+			display: flex;
+			align-items: center;
+			gap: 1em;
+			.logo {
+				font-size: 4rem;
+				path {
+					stroke: $gold;
+				}
+			}
+			.name {
+				font-family: "Dancing Script", cursive;
+				font-size: 4rem;
+				color: $gold;
+			}
+		}
+		.nav-links {
+			display: flex;
+			gap: 2em;
+			list-style: none;
+
+			a {
+				position: relative;
+				font-size: 1.8rem;
+				color: white;
+				text-decoration: none;
+				font-weight: 200;
+				transition: all 0.3s;
+			}
+			a:hover {
+				color: $gold;
+			}
+			a::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				margin: auto;
+				width: 0%;
+				height: 1px;
+				background-color: $gold;
+			}
+			a:hover::after {
+				animation: navHover 0.3s forwards;
+			}
+		}
+		.btn-burger {
+			display: none;
+		}
+
+		.burger-nav-links {
+			display: none;
+			.btn-burger-book {
+				display: none;
+			}
+		}
+
+		.btn-book {
+			display: block;
+			font-size: 1.5rem;
+		}
+	}
+}
